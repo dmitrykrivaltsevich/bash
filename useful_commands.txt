@@ -1,0 +1,33 @@
+# read file from remote server and display it in console
+ssh host 'tail -f /var/log/application.log'
+ssh -tA <username>@<bastion> ssh -o StrictHostKeyChecking=no <username>@<destination> 'tail -f /var/log/application.log'
+
+# port forwarding over SSH (forwards local port 9000 to destination:9000 over bastion:9000)
+ssh -L 9000:localhost:9000 -tA <username>@<bastion> ssh -L 9000:localhost:9000 -o StrictHostKeyChecking=no <username>@<destination> -N
+
+# tip 0001: infinite loop
+while true; do <PLACE COMMAND HERE>; sleep 1; done
+
+# tip 0002: email logs in attachement
+mutt -a abcdef.log mail@domain.com </dev/null
+
+# tip 0003: zip file:
+zip outputfilename.zip /input/file/name.ext
+
+# tip 0004: install SMART monitoring tools on Mac
+#	- install macports:
+#	-- download from macports.org
+#	-- compile && update ~/.bash_profile
+sudo port install smartmontools
+
+# tip 0005: lookup SMART info on Mac
+#	- look at 233 Media_Wearout_Indicator 0x0032   099   099 (remaining life in %)
+smartctl -a disk0
+
+# download entire site (site mirror, site dump)
+wget -mkEpnp http://example.org
+
+# dig, nslookup, and host will not see entries in it because they bypass the system's resolver and do raw DNS
+# lookups. They've always done this, so this is not new in Yosemite. The "official" way to do a lookup through the
+# system resolver in OS X is to use dscacheutil
+dscacheutil -q host -a name www.example.com
