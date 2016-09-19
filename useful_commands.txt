@@ -31,3 +31,8 @@ wget -mkEpnp http://example.org
 # lookups. They've always done this, so this is not new in Yosemite. The "official" way to do a lookup through the
 # system resolver in OS X is to use dscacheutil
 dscacheutil -q host -a name www.example.com
+
+# get external IP address (any of this command)
+curl http://ipecho.net/plain
+curl http://ipinfo.io/ip
+curl -s checkip.dyndns.org
