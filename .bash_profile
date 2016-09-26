@@ -1,6 +1,6 @@
 # Maven-related properties
 export MAVEN_HOME=~/apps/apache-maven-3.0.5
-export MAVEN_OPTS="-Xms1G -Xmx3G -XX:MaxPermSize=256m"
+export MAVEN_OPTS="-Xms1G -Xmx3G"
 export M2_REPO=~/.m2
 export PATH=$PATH:$MAVEN_HOME/bin
 
