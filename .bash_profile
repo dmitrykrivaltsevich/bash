@@ -62,3 +62,4 @@ alias drmcall='docker rm $(docker ps -a -q)' 	# delete all docker containers
 alias drmiall='docker rmi -f $(docker images -q)'	# delete all docker images
 alias dfix='eval "$(docker-machine env default)"' # Network timed out while trying to connect to https://index.docker.io
 alias dip='docker-machine ip default'
+alias projects='cd ~/projects'
