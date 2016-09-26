@@ -51,10 +51,6 @@ fi
 export NVM_DIR="$HOME/.nvm"
 . "$(brew --prefix nvm)/nvm.sh"
 
-# AWS python params
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
 # ALIASES
 alias ll='ls -lah'
 alias setjava7='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home'
