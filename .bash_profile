@@ -8,15 +8,14 @@ export PATH=$PATH:$MAVEN_HOME/bin
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Scala-related properties
-export SCALA_HOME=~/apps/scala-2.11.6
-export ACTIVATOR=~/apps/activator-dist-1.3.6
-export SBT_OPTS=-XX:MaxPermSize=256M
-export PATH=$PATH:$SCALA_HOME/bin:$ACTIVATOR
+export SCALA_HOME=~/apps/scala-2.11.8
+export PATH=$PATH:$SCALA_HOME/bin
+export PATH=~/apps/sbt-0.13.12/bin:$PATH
+# export SBT_OPTS=-XX:MaxPermSize=256M
 
-export PATH=/Users/user/Applications/sbt/bin:$PATH
-export PATH=/opt/local/bin:$PATH
-export PATH=/opt/local/sbin:$PATH
-export GRADLE_HOME=~/Applications/gradle-1.9
+# export PATH=/opt/local/bin:$PATH
+# export PATH=/opt/local/sbin:$PATH
+# export GRADLE_HOME=~/Applications/gradle-1.9
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .bash_profile.pysave
