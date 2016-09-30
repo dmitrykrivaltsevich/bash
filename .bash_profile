@@ -35,6 +35,7 @@ export LANG=en_US.UTF-8
 PATH="/usr/local/gnupg-2.1/bin:${PATH}"
 export PATH
 
+# http://brew.sh
 # Bash git prompt
 if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
     GIT_PROMPT_THEME=Default
