@@ -36,3 +36,73 @@ dscacheutil -q host -a name www.example.com
 curl http://ipecho.net/plain
 curl http://ipinfo.io/ip
 curl -s checkip.dyndns.org
+
+# list of open ports
+sudo lsof -i | egrep 'ESTABLISHED|LISTEN'
+
+# installation date
+sudo dumpe2fs /dev/sda5 | grep 'Filesystem created:'
+
+# kernel install
+sudo dpkg -i *.deb
+
+# delete old kernels
+sudo aptitude purge $(aptitude search ~ilinux-image -F %p|egrep -v "$(uname -r)|linux-image-generic")
+
+# remove orphaned libs
+sudo orphaner
+
+# quick backup
+rsync -av --progress ~/ /media/my-disk/my-folder/
+
+# extract tar.bz2
+tar -jxvf filename.tar.bz2
+
+# extract tar.gz
+tar -zxvf filename.tar.gz
+
+# dependency tree (java, maven)
+mvn dependency:tree
+
+# unused modules (java, maven) -- sometimes works
+mvn dependency:analyze
+
+# find a file which contains given text (recursive, shows path to file):
+grep -H -r "text" . | cut -d: -f1
+
+# performs search using a file as an input for search criteria (each line in a file represents separate search criteria):
+while read email; do echo Searching $email; grep -H -r $email --include "*.xml" . | cut -d: -f1; done < ~/temp/emails.txt
+
+# counts matches in a file:
+grep -c "pattern"
+
+# counts matches in all files:
+grep -r -H -c "pattern" .
+
+# counts matches in all files (sum of all values in all files): 
+grep -r -H -c "== null" . | cut -d ":" -f2 | grep [1-9][0-9]* | awk 'BEGIN {c=0}{c=c+$0} END {print c}'
+
+# search for "non-existing" resources, counts number of calls:
+egrep -o "Uri (.*?) does not exist" fo-web.log | sort | uniq -c | sort -nr > links.txt 
+
+# ZIP all files that with matched filenames:
+find . -noleaf -type f -print | egrep "2013-07-18" | sed 's/ /\\ /g' | xargs zip /folder/2013-07-18/my.zip
+
+# find and copy files:
+find . -noleaf -type f -name "*.xml" | egrep "(foo|bar)/2013-07-18" | sed 's/ /\\ /g' | xargs cp -t /folder/foo-or-bar
+
+# who and when was logged in:
+last
+
+# setup of java-monitoring on remote host for visualvm:
+# note: it requires jstatd file 
+# [user@server jdk1.8.0_120]$ cat /usr/local/j2sdk/.jstatd.all.policy
+# grant codebase "file:/usr/local/j2sdk/lib/tools.jar" {
+#    permission java.security.AllPermission;
+# };
+# jstatd has to be executed under the same user which will start a server with an application
+jstatd -J-Djava.security.policy=/usr/local/j2sdk/.jstatd.all.policy &
+
+# for loop
+for i in {1..10}; do echo $i; done
+
