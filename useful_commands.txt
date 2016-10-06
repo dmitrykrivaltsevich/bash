@@ -106,3 +106,8 @@ jstatd -J-Djava.security.policy=/usr/local/j2sdk/.jstatd.all.policy &
 # for loop
 for i in {1..10}; do echo $i; done
 
+# downgrade python tools
+sudo pip3 install stups-senza==1.0.92
+
+# find a  list of versions for downgrade
+sudo pip3 install stups-senza=abracadabra
