@@ -103,6 +103,9 @@ last
 # jstatd has to be executed under the same user which will start a server with an application
 jstatd -J-Djava.security.policy=/usr/local/j2sdk/.jstatd.all.policy &
 
+# get heap dump of java application in docker container (1 is a process ID)
+docker exec <container-name> jcmd 1 GC.heap_dump /tmp/docker.hprof
+
 # for loop
 for i in {1..10}; do echo $i; done
 
