@@ -124,3 +124,6 @@ sudo pip3 install stups-senza==1.0.92
 
 # find a  list of versions for downgrade
 sudo pip3 install stups-senza=abracadabra
+
+# simply HTTP server
+python -m SimpleHTTPServer
