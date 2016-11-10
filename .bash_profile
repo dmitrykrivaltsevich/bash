@@ -51,6 +51,13 @@ fi
 export NVM_DIR="$HOME/.nvm"
 . "$(brew --prefix nvm)/nvm.sh"
 
+# Disable access to given host
+ban() {
+  sudo echo "127.0.0.1  $1" >> /etc/hosts
+  sudo echo "::1 $1" >> /etc/hosts
+  dscacheutil -flushcache
+}
+
 # ALIASES
 alias ll='ls -lahG'
 alias setjava7='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home'
