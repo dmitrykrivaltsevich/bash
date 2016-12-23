@@ -1,0 +1,10 @@
+.disk_label
+.disk_label_2x
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+tmbootpicker.efi
+Backups.backupdb
