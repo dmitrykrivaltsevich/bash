@@ -7,4 +7,3 @@
 .Trashes
 .VolumeIcon.icns
 tmbootpicker.efi
-Backups.backupdb
