@@ -73,6 +73,9 @@ grep -H -r "text" . | cut -d: -f1
 # performs search using a file as an input for search criteria (each line in a file represents separate search criteria):
 while read email; do echo Searching $email; grep -H -r $email --include "*.xml" . | cut -d: -f1; done < ~/temp/emails.txt
 
+# search across all *.gz files
+find -name \*.gz -print0 | xargs -0 zgrep "any text to find"
+
 # counts matches in a file:
 grep -c "pattern"
 
