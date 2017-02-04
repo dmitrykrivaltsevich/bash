@@ -53,7 +53,8 @@ sudo aptitude purge $(aptitude search ~ilinux-image -F %p|egrep -v "$(uname -r)|
 sudo orphaner
 
 # quick backup
-rsync -av --progress --exclude-from=do-not-backup.txt /Volumes/backup/ /Volumes/backup2/ 2>~/backup.log
+rsync -av --progress --exclude-from=do-not-backup.txt /Volumes/backup/ /Volumes/backup2/ 2>~/backup.log # doesn't work on 2T drives
+sudo dd if=/dev/sourcedisk | pv -s 2T | sudo dd of=/dev/targetdisk conv=noerror,sync
 
 # extract tar.bz2
 tar -jxvf filename.tar.bz2
