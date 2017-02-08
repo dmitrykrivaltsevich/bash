@@ -65,5 +65,3 @@ alias dfix='eval "$(docker-machine env default)"' # Network timed out while tryi
 alias dip='docker-machine ip default'
 alias projects='cd ~/projects'
 alias mvn305='~/apps/apache-maven-3.0.5/bin/mvn'
-alias pgstart='pg_ctl -D /usr/local/var/postgres start'
-alias pgstop='pg_ctl -D /usr/local/var/postgres stop'
