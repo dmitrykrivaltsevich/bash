@@ -36,6 +36,7 @@ dscacheutil -q host -a name www.example.com
 curl http://ipecho.net/plain
 curl http://ipinfo.io/ip
 curl -s checkip.dyndns.org
+curl ipinfo.io/185.85.220.193 # returns even geo location
 
 # list of open ports
 sudo lsof -i | egrep 'ESTABLISHED|LISTEN'
