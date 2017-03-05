@@ -141,3 +141,6 @@ git pull --all
 
 # quickly create big file / allocate a lot of space
 fallocate -l 100G big.file
+
+# determine file type
+file your_file.raw
