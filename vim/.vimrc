@@ -1,5 +1,7 @@
-" show line numbers
-set number
+set number " show line numbers
+" line numbers background and textcolor
+highlight LineNr ctermfg=darkgrey
+set backspace=indent,eol,start " fixes backspace in INSERT mode
 
 " show file encoding
 set laststatus=2 statusline=%f\ %m\ %{&fileencoding?&fileencoding:&encoding}
@@ -18,7 +20,7 @@ map <F3> :NERDTreeToggle<CR>
 silent! map <F4> :NERDTreeFind<CR>
 let g:NERDTreeMapActivateNode="<F4>"
 let NERDTreeShowHidden=1 " show hidden files
-:let g:NERDTreeWinSize=50 " change width
+:let g:NERDTreeWinSize=40 " change width
 
 " ctrlpvim plugin (search)
 set wildignore+=*/target/* " exclude 'target' folder form index
