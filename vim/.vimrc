@@ -23,7 +23,7 @@ let NERDTreeShowHidden=1 " show hidden files
 :let g:NERDTreeWinSize=40 " change width
 
 " ctrlpvim plugin (search)
-set wildignore+=*/target/* " exclude 'target' folder form index
+set wildignore+=*/target/*,*/node_modules/* " exclude 'target' folder form index
 
 " vim-gutgutter plugin - changed / updated / deleted lines
 set updatetime=250 " frequence for window update in ms
@@ -33,3 +33,4 @@ let g:neocomplete#enable_at_startup = 1 " enabled autocomplete on start
 let g:neocomplete#enable_smart_case = 1 " enable smartcase
 " <TAB> completion
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
