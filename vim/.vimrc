@@ -2,6 +2,7 @@ set number " show line numbers
 " line numbers background and textcolor
 highlight LineNr ctermfg=darkgrey
 set backspace=indent,eol,start " fixes backspace in INSERT mode
+" tab navigation
 
 " show file encoding
 set laststatus=2 statusline=%f\ %m\ %{&fileencoding?&fileencoding:&encoding}
@@ -23,7 +24,7 @@ let NERDTreeShowHidden=1 " show hidden files
 :let g:NERDTreeWinSize=40 " change width
 
 " ctrlpvim plugin (search)
-set wildignore+=*/target/*,*/node_modules/* " exclude 'target' folder form index
+set wildignore+=*/target/* " exclude 'target' folder form index
 
 " vim-gutgutter plugin - changed / updated / deleted lines
 set updatetime=250 " frequence for window update in ms
@@ -34,3 +35,5 @@ let g:neocomplete#enable_smart_case = 1 " enable smartcase
 " <TAB> completion
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+" force vim to try to find tags in any folder up to root
+set tags=tags;/
