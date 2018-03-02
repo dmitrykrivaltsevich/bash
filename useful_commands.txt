@@ -166,3 +166,7 @@ egrep "\s-1\s" -r --include "*.log" . | wc -l
 import language.implicitConversions
 import scala.reflect.runtime.universe.reify
 reify { implicitly[Ordering[Int]] } // here you see explanation
+
+# Apple disk encryption progress
+diskutil apfs list
+diskutil cs list
