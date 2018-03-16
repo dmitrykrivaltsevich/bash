@@ -170,3 +170,6 @@ reify { implicitly[Ordering[Int]] } // here you see explanation
 # Apple disk encryption progress
 diskutil apfs list
 diskutil cs list
+
+# Count number of code lines in git repository per user
+git ls-files | while read f; do git blame -w -M -C -C --line-porcelain "$f" | grep -I '^author '; done | sort -f | uniq -ic | sort -n
