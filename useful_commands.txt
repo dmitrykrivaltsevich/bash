@@ -173,3 +173,6 @@ diskutil cs list
 
 # Count number of code lines in git repository per user
 git ls-files | while read f; do git blame -w -M -C -C --line-porcelain "$f" | grep -I '^author '; done | sort -f | uniq -ic | sort -n
+
+# Count number of lines changed by user since specific date
+git log --shortstat --author "Dmitry Krivaltsevich" --since "yesterday" | grep "files changed" | awk '{files+=$1; inserted+=$4; deleted+=$6} END {print "files changed:”, files, "lines inserted:", inserted, "lines deleted:", deleted}'
