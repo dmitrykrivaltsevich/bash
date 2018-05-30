@@ -151,6 +151,9 @@ file your_file.raw
 # download access logs from AWS
 aws s3 cp s3://bucket-with-logs/sub/folder . --recursive
 
+# upload files to S3 + cache control
+aws s3 cp folder s3://bucket/folder --recursive --cache-control max-age=0,no-cache,no-store,must-revalidate
+
 # catch 4xx & 5xx + connections closed by client (-1s):
 egrep "([0-9]{1,2}.[0-9]{3}\s|-1\s){3}(200\s)?[4-5][0-9]{2}" -r --include "*.log" .
 
