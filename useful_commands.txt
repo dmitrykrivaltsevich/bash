@@ -163,6 +163,9 @@ egrep "(\s[1-9]{1}[0-9]{0,2}\.[0-9]{3}\s)" -r --include "*.log" .
 # invalid requests or connections closed by client:
 egrep "\s-1\s" -r --include "*.log" . | wc -l
 
+# generate strong password
+head -c24 /dev/urandom | base64 gives 144 bits of entropy
+
 # SCALA
 ########
 # to debug scala implicits
